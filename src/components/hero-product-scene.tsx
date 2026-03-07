@@ -118,6 +118,7 @@ function FloatingDevice({
           width={1080}
           height={1920}
           priority={priority}
+          unoptimized
           className="h-auto w-full rounded-[28px]"
         />
       </div>

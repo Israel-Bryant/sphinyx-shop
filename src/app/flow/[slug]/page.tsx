@@ -215,6 +215,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 alt={product.screenshots[2].alt}
                 width={1080}
                 height={1920}
+                unoptimized
                 className="h-full w-full rounded-[28px] object-cover"
               />
             </div>
@@ -225,6 +226,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 alt={linkShot.alt}
                 width={1080}
                 height={1920}
+                unoptimized
                 className="h-auto w-full rounded-[24px]"
               />
             </div>
