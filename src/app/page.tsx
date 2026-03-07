@@ -3,6 +3,7 @@ import { FadeIn } from "@/components/fade-in";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { STORE_LINKS } from "@/lib/store-links";
+import { flowProducts } from "@/lib/flow-products";
 
 const categories = [
   {
@@ -21,16 +22,16 @@ const categories = [
       "Cliente oficial para downloads, biblioteca e evolucao futura com updates automaticos.",
   },
   {
-    title: "Service Apps",
+    title: "Flow",
     description:
-      "Linha em producao para automacao de servicos como barbearias, estetica e clinicas.",
+      "Linha em producao para apps mobile de automacao de servicos como barbearias, estetica e clinicas.",
   },
 ];
 
 const pillars = [
   "Sphynix atua como holding para organizar marca, infraestrutura e novas linhas de produto.",
   "Sphynix Platform centraliza conta, licencas, downloads e distribuicao do ecossistema.",
-  "A primeira vertical em producao e a linha de apps para automacao de servicos.",
+  "A primeira linha em producao e Flow, com apps mobile para negocios de servico.",
 ];
 
 const ecosystem = [
@@ -43,8 +44,8 @@ const ecosystem = [
     copy: "Infraestrutura de marketplace, conta, pagamentos, licencas e distribuicao.",
   },
   {
-    title: "Service Automation",
-    copy: "Vertical operacional com apps para negocios de servico e gestao do dia a dia.",
+    title: "Flow",
+    copy: "Linha operacional com apps mobile-first para negocios de servico e atendimento.",
   },
   {
     title: "Launcher",
@@ -55,7 +56,7 @@ const ecosystem = [
 const previewCards = [
   { name: "Sphynix Launcher", type: "Core App", status: "Download" },
   { name: "Flow", type: "Product Line", status: "Mobile-first" },
-  { name: "Marketplace Core", type: "Infra", status: "Estruturacao" },
+  { name: "BarberFlow", type: "App", status: "Pagina pronta" },
 ];
 
 const flowSegments = [
@@ -66,6 +67,8 @@ const flowSegments = [
 ];
 
 export default function Home() {
+  const barberFlow = flowProducts[0];
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(212,175,55,0.18),_transparent_30%),radial-gradient(circle_at_80%_20%,_rgba(120,103,46,0.22),_transparent_20%),linear-gradient(180deg,_rgba(11,11,11,0.92),_rgba(11,11,11,1))]" />
@@ -77,7 +80,7 @@ export default function Home() {
         <section className="grid min-h-[78vh] items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
           <FadeIn className="space-y-8">
             <div className="inline-flex items-center rounded-full border border-[var(--border-strong)] bg-[var(--surface-soft)] px-4 py-2 text-xs uppercase tracking-[0.32em] text-[var(--accent)]">
-              Ecossistema de software de automação digital
+              Ecossistema de software de automacao digital
             </div>
 
             <div className="space-y-6">
@@ -138,10 +141,10 @@ export default function Home() {
               <div className="space-y-8">
                 <div className="flex items-center justify-between">
                   <span className="text-xs uppercase tracking-[0.35em] text-[var(--accent)]">
-                    Launcher Node
+                    Flow Line
                   </span>
                   <span className="rounded-full border border-[var(--border-strong)] px-3 py-1 text-xs text-[var(--muted)]">
-                    Windows / macOS
+                    iOS / Android
                   </span>
                 </div>
 
@@ -149,10 +152,10 @@ export default function Home() {
                   <div className="mb-6 flex items-center justify-between">
                     <div>
                       <p className="font-display text-2xl text-[var(--foreground)]">
-                        Flow
+                        BarberFlow
                       </p>
                       <p className="text-sm text-[var(--muted)]">
-                        Linha especifica para automacao de servicos com foco inicial em mobile.
+                        Primeira pagina de produto da linha Flow pronta para receber conteudo real.
                       </p>
                     </div>
                     <div className="h-14 w-14 rounded-2xl border border-[var(--border-strong)] bg-[radial-gradient(circle_at_30%_30%,_rgba(255,215,120,0.22),_rgba(17,17,17,0.92))]" />
@@ -221,9 +224,8 @@ export default function Home() {
             </h2>
             <p className="section-copy">
               O foco agora e posicionar a Sphynix como holding, mostrar a
-              Sphynix Platform como infraestrutura e destacar a vertical de
-              automacao de servicos como primeira operacao real atraves da
-              linha Flow.
+              Sphynix Platform como infraestrutura e destacar Flow como primeira
+              operacao real.
             </p>
           </FadeIn>
 
@@ -279,8 +281,8 @@ export default function Home() {
               <Link href="/flow" className="btn-secondary">
                 Ver pagina da linha Flow
               </Link>
-              <Link href="/marketplace" className="btn-secondary">
-                Ver estrutura no marketplace
+              <Link href={`/flow/${barberFlow.slug}`} className="btn-secondary">
+                Abrir BarberFlow
               </Link>
             </div>
           </FadeIn>
@@ -307,6 +309,46 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="grid gap-6 lg:grid-cols-[1fr_0.95fr]">
+          <FadeIn className="panel p-8 sm:p-10">
+            <p className="section-tag">{barberFlow.name}</p>
+            <h2 className="section-title max-w-2xl">
+              A primeira pagina de produto ja esta pronta para receber conteudo real.
+            </h2>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-[var(--muted)]">
+              Como as fotos e informacoes estao em outro computador, deixei a
+              estrutura pronta com placeholders e dados centralizados. Assim
+              voce ou o outro Codex so precisam completar um arquivo de produto
+              e subir as imagens depois.
+            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Link href={`/flow/${barberFlow.slug}`} className="btn-primary">
+                Ver pagina do BarberFlow
+              </Link>
+              <Link href="/marketplace" className="btn-secondary">
+                Ver catalogo inicial
+              </Link>
+            </div>
+          </FadeIn>
+
+          <div className="grid gap-4">
+            {barberFlow.screenshots.map((shot, index) => (
+              <FadeIn
+                key={shot}
+                delay={index * 0.08}
+                className="panel p-6"
+              >
+                <p className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">
+                  Placeholder
+                </p>
+                <p className="mt-4 text-2xl leading-8 text-[var(--foreground)]">
+                  {shot}
+                </p>
+              </FadeIn>
+            ))}
+          </div>
+        </section>
+
         <section className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <FadeIn className="panel p-8 sm:p-10">
             <p className="section-tag">Sphynix Launcher</p>
@@ -316,14 +358,14 @@ export default function Home() {
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[var(--muted)]">
               A camada institucional apresenta a empresa, a plataforma sustenta
               conta e marketplace e o launcher vira o cliente oficial para
-              downloads, biblioteca e evolução das linhas de software.
+              downloads, biblioteca e evolucao das linhas de software.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link href="/launcher" className="btn-primary">
                 Ver pagina do launcher
               </Link>
               <Link href="/marketplace" className="btn-secondary">
-                Ver catálogo inicial
+                Ver catalogo inicial
               </Link>
             </div>
           </FadeIn>
@@ -354,10 +396,11 @@ export default function Home() {
         <FadeIn className="panel-gold p-8 sm:p-10">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="section-tag">Próximo movimento</p>
+              <p className="section-tag">Proximo movimento</p>
               <h2 className="section-title max-w-2xl">
                 A base do site agora comunica a holding, a plataforma e a
-                primeira vertical em producao.</h2>
+                primeira vertical em producao.
+              </h2>
             </div>
             <Link href="/marketplace" className="btn-primary">
               Continuar para marketplace

@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 
 const products = [
   {
-    name: "Flow for Barbearias",
+    name: "BarberFlow",
     category: "Flow Mobile",
     platform: "iOS / Android",
     pricing: "Em producao",
@@ -106,7 +106,13 @@ export default function MarketplacePage() {
                 <div className="mt-8 flex items-center justify-between border-t border-[var(--border-soft)] pt-5 text-sm text-[var(--muted)]">
                   <span>{product.platform}</span>
                   <Link
-                    href={product.name === "Sphynix Launcher" ? "/launcher" : "/flow"}
+                    href={
+                      product.name === "Sphynix Launcher"
+                        ? "/launcher"
+                        : product.name === "BarberFlow"
+                          ? "/flow/barberflow"
+                          : "/flow"
+                    }
                     className="text-[var(--foreground)] transition hover:text-[var(--accent)]"
                   >
                     Ver detalhes

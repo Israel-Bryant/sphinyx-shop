@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FadeIn } from "@/components/fade-in";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { STORE_LINKS } from "@/lib/store-links";
+import { flowProducts } from "@/lib/flow-products";
 
 const pillars = [
   {
@@ -43,23 +43,6 @@ export default function FlowPage() {
               ecossistema principal como uma linha de produtos clara, com pagina
               propria, identidade propria e rotas dedicadas.
             </p>
-
-            <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <a
-                href={STORE_LINKS.appStore}
-                className="btn-primary"
-                aria-label="Link futuro da App Store para Flow"
-              >
-                App Store
-              </a>
-              <a
-                href={STORE_LINKS.playStore}
-                className="btn-secondary"
-                aria-label="Link futuro da Play Store para Flow"
-              >
-                Google Play
-              </a>
-            </div>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link href="/marketplace" className="btn-secondary">
@@ -102,6 +85,38 @@ export default function FlowPage() {
               <p className="mt-4 text-2xl leading-8 text-[var(--foreground)]">
                 {segment}
               </p>
+            </FadeIn>
+          ))}
+        </section>
+
+        <section className="grid gap-5 md:grid-cols-2">
+          {flowProducts.map((product, index) => (
+            <FadeIn
+              key={product.slug}
+              delay={index * 0.08}
+              className="panel-gold p-7"
+            >
+              <p className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">
+                Produto inicial
+              </p>
+              <h2 className="mt-4 font-display text-4xl text-[var(--foreground)]">
+                {product.name}
+              </h2>
+              <p className="mt-4 text-base leading-7 text-[var(--muted)]">
+                {product.summary}
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <Link href={`/flow/${product.slug}`} className="btn-primary">
+                  Abrir pagina do produto
+                </Link>
+                <a
+                  href={product.appStoreUrl}
+                  className="btn-secondary"
+                  aria-label={`Link futuro da App Store para ${product.name}`}
+                >
+                  App Store
+                </a>
+              </div>
             </FadeIn>
           ))}
         </section>
