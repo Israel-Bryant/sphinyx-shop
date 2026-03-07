@@ -56,7 +56,7 @@ const ecosystem = [
 const previewCards = [
   { name: "Sphynix Launcher", type: "Core App", status: "Download" },
   { name: "Flow", type: "Product Line", status: "Mobile-first" },
-  { name: "BarberFlow", type: "App", status: "Pagina pronta" },
+  { name: "BarberFlow", type: "App", status: "Produto em destaque" },
 ];
 
 const flowSegments = [
@@ -155,7 +155,7 @@ export default function Home() {
                         BarberFlow
                       </p>
                       <p className="text-sm text-[var(--muted)]">
-                        Primeira pagina de produto da linha Flow pronta para receber conteudo real.
+                        Primeiro produto real da linha Flow com narrativa, modulos e galeria integrados.
                       </p>
                     </div>
                     <div className="h-14 w-14 rounded-2xl border border-[var(--border-strong)] bg-[radial-gradient(circle_at_30%_30%,_rgba(255,215,120,0.22),_rgba(17,17,17,0.92))]" />
@@ -313,13 +313,12 @@ export default function Home() {
           <FadeIn className="panel p-8 sm:p-10">
             <p className="section-tag">{barberFlow.name}</p>
             <h2 className="section-title max-w-2xl">
-              A primeira pagina de produto ja esta pronta para receber conteudo real.
+              BarberFlow ja pode ser apresentado com narrativa, modulos e capturas reais.
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-[var(--muted)]">
-              Como as fotos e informacoes estao em outro computador, deixei a
-              estrutura pronta com placeholders e dados centralizados. Assim
-              voce ou o outro Codex so precisam completar um arquivo de produto
-              e subir as imagens depois.
+              A pagina do produto agora mostra o posicionamento real do
+              BarberFlow dentro da linha Flow, com beneficios claros, modulos
+              centrais e uma galeria conectada ao conteudo oficial do produto.
             </p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link href={`/flow/${barberFlow.slug}`} className="btn-primary">
@@ -334,15 +333,18 @@ export default function Home() {
           <div className="grid gap-4">
             {barberFlow.screenshots.map((shot, index) => (
               <FadeIn
-                key={shot}
+                key={shot.imageSrc}
                 delay={index * 0.08}
                 className="panel p-6"
               >
                 <p className="text-xs uppercase tracking-[0.28em] text-[var(--accent)]">
-                  Placeholder
+                  Preview do produto
                 </p>
                 <p className="mt-4 text-2xl leading-8 text-[var(--foreground)]">
-                  {shot}
+                  {shot.title}
+                </p>
+                <p className="mt-3 text-base leading-7 text-[var(--muted)]">
+                  {shot.description}
                 </p>
               </FadeIn>
             ))}

@@ -2,15 +2,18 @@ import Link from "next/link";
 import { FadeIn } from "@/components/fade-in";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { flowProductsBySlug } from "@/lib/flow-products";
+
+const barberFlow = flowProductsBySlug.barberflow;
 
 const products = [
   {
-    name: "BarberFlow",
-    category: "Flow Mobile",
-    platform: "iOS / Android",
-    pricing: "Em producao",
-    description:
-      "Apps para operacao de agenda, atendimento, fluxo interno e gestao do dia a dia.",
+    name: barberFlow.name,
+    category: barberFlow.shortLabel,
+    platform: barberFlow.platforms.join(" / "),
+    pricing: barberFlow.status,
+    description: barberFlow.summary,
+    href: `/flow/${barberFlow.slug}`,
   },
   {
     name: "Flow for Estetica",
@@ -19,6 +22,7 @@ const products = [
     pricing: "Em producao",
     description:
       "Estrutura focada em servicos, recorrencia, equipe, atendimento e operacao comercial.",
+    href: "/flow",
   },
   {
     name: "Flow for Clinicas",
@@ -27,6 +31,7 @@ const products = [
     pricing: "Planejamento ativo",
     description:
       "Base para rotinas administrativas, atendimento e organizacao operacional.",
+    href: "/flow",
   },
   {
     name: "Sphynix Launcher",
@@ -35,6 +40,7 @@ const products = [
     pricing: "Core download",
     description:
       "Cliente principal da plataforma para distribuicao, biblioteca e updates futuros.",
+    href: "/launcher",
   },
 ];
 
@@ -106,13 +112,7 @@ export default function MarketplacePage() {
                 <div className="mt-8 flex items-center justify-between border-t border-[var(--border-soft)] pt-5 text-sm text-[var(--muted)]">
                   <span>{product.platform}</span>
                   <Link
-                    href={
-                      product.name === "Sphynix Launcher"
-                        ? "/launcher"
-                        : product.name === "BarberFlow"
-                          ? "/flow/barberflow"
-                          : "/flow"
-                    }
+                    href={product.href}
                     className="text-[var(--foreground)] transition hover:text-[var(--accent)]"
                   >
                     Ver detalhes
