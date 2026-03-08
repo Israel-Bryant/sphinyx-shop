@@ -74,15 +74,15 @@ export function StoreDownloadBadge({
         : <WebIcon />;
 
   const content = (
-    <div className="group inline-flex min-h-[84px] w-full min-w-0 items-center gap-4 rounded-[22px] border border-white/12 bg-black px-5 py-4 text-white shadow-[0_20px_60px_rgba(0,0,0,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:border-white/20 sm:min-w-[228px] sm:w-auto">
+    <div className="group flex min-h-[84px] w-full min-w-0 flex-1 basis-[240px] items-center gap-4 rounded-[22px] border border-white/12 bg-black px-5 py-4 text-white shadow-[0_20px_60px_rgba(0,0,0,0.28)] transition-all duration-200 hover:-translate-y-0.5 hover:border-white/20">
       <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/4 text-white">
         {icon}
       </span>
-      <span className="flex flex-col">
+      <span className="flex min-w-0 flex-col">
         <span className="text-[0.68rem] uppercase tracking-[0.18em] text-white/55">
           {ready ? eyebrow : "Em breve"}
         </span>
-        <span className="mt-1 text-2xl font-semibold tracking-tight">
+        <span className="mt-1 break-words text-[1.95rem] font-semibold leading-[1.02] tracking-tight sm:text-2xl">
           {label}
         </span>
       </span>

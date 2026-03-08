@@ -290,7 +290,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 de teste sem compromisso.
               </p>
 
-              <div className="flex flex-col gap-4 sm:flex-row">
+              <div className="flex flex-wrap gap-4">
                 <StoreDownloadBadge
                   platform="play"
                   href={product.playStoreUrl}
