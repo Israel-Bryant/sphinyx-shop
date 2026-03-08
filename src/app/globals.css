@@ -72,7 +72,8 @@ a {
 }
 
 .btn-primary,
-.btn-secondary {
+.btn-secondary,
+.btn-mercado {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -100,14 +101,29 @@ a {
   background: rgba(255, 255, 255, 0.02);
 }
 
+.btn-mercado {
+  color: #f6ead2;
+  border: 1px solid rgba(0, 164, 228, 0.36);
+  background:
+    linear-gradient(135deg, rgba(0, 164, 228, 0.2), rgba(0, 98, 189, 0.16)),
+    rgba(12, 18, 24, 0.78);
+  box-shadow: 0 0 28px rgba(0, 164, 228, 0.14);
+}
+
 .btn-primary:hover,
-.btn-secondary:hover {
+.btn-secondary:hover,
+.btn-mercado:hover {
   transform: translateY(-1px);
 }
 
 .btn-secondary:hover {
   border-color: rgba(214, 170, 67, 0.5);
   color: var(--accent);
+}
+
+.btn-mercado:hover {
+  border-color: rgba(0, 164, 228, 0.55);
+  box-shadow: 0 0 34px rgba(0, 164, 228, 0.22);
 }
 
 .section-tag {

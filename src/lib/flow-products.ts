@@ -64,8 +64,11 @@ export type FlowProduct = {
   pricing: FlowProductPricing;
   clientProfiles: FlowProductClientProfile[];
   reviewSlides: FlowProductReviewSlide[];
+  storefrontUrl: string;
+  webAppAuthUrl: string;
   appStoreUrl: string;
   playStoreUrl: string;
+  mercadoPagoUrl: string;
 };
 
 export const flowProducts: FlowProduct[] = [
@@ -296,8 +299,11 @@ export const flowProducts: FlowProduct[] = [
         icon: "growth",
       },
     ],
+    storefrontUrl: STORE_LINKS.storefront,
+    webAppAuthUrl: STORE_LINKS.webAppAuth,
     appStoreUrl: STORE_LINKS.appStore,
     playStoreUrl: STORE_LINKS.playStore,
+    mercadoPagoUrl: STORE_LINKS.mercadoPago,
   },
 ];
 
