@@ -1,7 +1,7 @@
 export const STORE_LINKS = {
   storefront: "https://sphynix.com/flow/barberflow",
-  webAppAuth: "https://barbershop-sphynx.web.app/login",
+  webAppAuth: "https://barberflow-web-sphynix.web.app/",
   appStore: "#",
   playStore: "#",
-  mercadoPago: "https://sphynix.com/flow/barberflow#planos",
+  mercadoPago: "",
 };

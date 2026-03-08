@@ -56,7 +56,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   const appStoreReady = hasStoreLink(product.appStoreUrl);
   const playStoreReady = hasStoreLink(product.playStoreUrl);
-  const mercadoPagoReady = hasStoreLink(product.mercadoPagoUrl);
   const webAppAuthReady = hasStoreLink(product.webAppAuthUrl);
 
   const heroShot = product.screenshots[0];
@@ -98,20 +97,6 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </a>
               <a href="#fluxo" className="btn-secondary">
                 Ver como funciona
-              </a>
-              <a
-                href={mercadoPagoReady ? product.mercadoPagoUrl : "#planos"}
-                className="btn-mercado"
-              >
-                Assinar no desktop
-              </a>
-              <a
-                href={webAppAuthReady ? product.webAppAuthUrl : product.storefrontUrl}
-                className="btn-secondary"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Entrar no BarberFlow Web
               </a>
             </div>
 
@@ -157,6 +142,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 platform="apple"
                 href={product.appStoreUrl}
                 ready={appStoreReady}
+              />
+              <StoreDownloadBadge
+                platform="web"
+                href={product.webAppAuthUrl}
+                ready={webAppAuthReady}
               />
             </div>
           </FadeIn>
@@ -311,6 +301,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
                   href={product.appStoreUrl}
                   ready={appStoreReady}
                 />
+                <StoreDownloadBadge
+                  platform="web"
+                  href={product.webAppAuthUrl}
+                  ready={webAppAuthReady}
+                />
               </div>
             </FadeIn>
 
@@ -336,50 +331,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
               </p>
 
               <p className="mt-3 max-w-md text-sm leading-7 text-[var(--muted)]">
-                Entrada simples, sem mudar a estrutura da sua operacao de uma vez.
+                O acesso premium e a assinatura acontecem depois, dentro do app,
+                na mesma conta usada no Android, iPhone e Web.
               </p>
-
-              <div
-                id="mercado-pago"
-                className="mt-8 w-full max-w-xl rounded-[30px] border border-[var(--border-strong)] bg-[rgba(255,255,255,0.03)] p-6 text-left shadow-[0_18px_60px_rgba(0,0,0,0.22)]"
-              >
-                <p className="text-xs uppercase tracking-[0.24em] text-[var(--accent)]">
-                  Mercado Pago
-                </p>
-                <p className="mt-3 text-2xl leading-9 text-[var(--foreground)]">
-                  Use este ponto unico para a assinatura web e desktop.
-                </p>
-                <p className="mt-3 text-sm leading-7 text-[var(--muted)]">
-                  URL da loja para configurar no Mercado Pago:
-                </p>
-                <a
-                  href={product.storefrontUrl}
-                  className="mt-4 block break-all rounded-[22px] border border-[var(--border-soft)] bg-[rgba(10,10,10,0.66)] px-4 py-4 text-sm leading-7 text-[var(--foreground)] transition-colors duration-200 hover:border-[var(--border-strong)]"
-                >
-                  {product.storefrontUrl}
-                </a>
-                <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-                  <a
-                    href={product.storefrontUrl}
-                    className="btn-mercado"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Abrir pagina da loja
-                  </a>
-                  <a
-                    href={product.webAppAuthUrl}
-                    className="btn-secondary"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Abrir login do web app
-                  </a>
-                  <a href="#topo" className="btn-secondary">
-                    Voltar ao topo
-                  </a>
-                </div>
-              </div>
             </FadeIn>
           </div>
         </section>
