@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   title: "Sphynix Platform",
   description:
     "Marketplace e plataforma de distribuicao para software, SaaS, aplicativos e o Sphynix Launcher.",
+  icons: {
+    icon: "/brand/sphynix-mark.svg",
+    shortcut: "/brand/sphynix-mark.svg",
+    apple: "/brand/sphynix-mark.svg",
+  },
 };
 
 export default function RootLayout({

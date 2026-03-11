@@ -48,6 +48,35 @@ a {
   font-family: var(--font-cinzel), serif;
 }
 
+.brand-lockup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.brand-logo {
+  display: block;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(214, 170, 67, 0.18));
+}
+
+.brand-logo--wordmark {
+  max-width: min(240px, 52vw);
+}
+
+.brand-logo--mark {
+  max-width: 4rem;
+}
+
+.brand-platform-label {
+  padding-left: 0.35rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
 .panel {
   border: 1px solid var(--border-soft);
   background:
@@ -203,5 +232,10 @@ a {
   .panel,
   .panel-gold {
     border-radius: 26px;
+  }
+
+  .brand-platform-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.34em;
   }
 }

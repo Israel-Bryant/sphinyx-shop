@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandLogo } from "@/components/brand-logo";
 
 const navLinks = [
   { href: "/", label: "Inicio" },
@@ -11,15 +12,14 @@ const navLinks = [
 export function SiteHeader() {
   return (
     <header className="relative z-20 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6 sm:px-10 lg:px-12">
-      <Link href="/" className="flex items-center gap-3">
-        <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[var(--border-strong)] bg-[radial-gradient(circle_at_30%_30%,_rgba(255,220,140,0.2),_rgba(18,18,18,0.92))]">
-          <span className="font-display text-lg text-[var(--accent)]">S</span>
-        </div>
-        <div>
-          <p className="font-display text-2xl text-[var(--foreground)]">
-            Sphynix
-          </p>
-          <p className="text-xs uppercase tracking-[0.28em] text-[var(--muted)]">
+      <Link href="/" className="group flex items-start gap-3 sm:items-center">
+        <div className="brand-lockup">
+          <BrandLogo
+            variant="wordmark"
+            priority
+            className="h-10 w-auto sm:h-11"
+          />
+          <p className="brand-platform-label transition group-hover:text-[var(--accent)]">
             Platform
           </p>
         </div>
